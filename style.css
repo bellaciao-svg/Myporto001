@@ -1,39 +1,38 @@
-/* Mengatur font global dan reset margin agar tampilan bersih */
+/* Mengatur font global dan reset margin/padding bawaan browser */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Memastikan padding tidak merusak ukuran elemen */
+    box-sizing: border-box; /* Agar padding tidak merusak lebar elemen */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    scroll-behavior: smooth; /* Efek scrolling halus saat klik menu navigasi */
+    scroll-behavior: smooth; /* Efek scroll halus saat klik menu navigasi */
 }
 
 body {
-    background-color: #fff5f7; /* Warna latar belakang pink sangat muda */
-    color: #333; /* Warna teks utama abu-abu gelap agar nyaman dibaca */
-    line-height: 1.6;
+    background-color: #fff5f7; /* Warna latar belakang putih sedikit pink muda */
+    color: #333; /* Warna teks utama */
 }
 
-/* --- NAVIGASI --- */
+/* --- BAGIAN NAVIGASI --- */
 header {
     background-color: #ffffff;
-    padding: 1rem 10%; /* Memberi ruang di kiri-kanan */
-    position: fixed; /* Navigasi tetap di atas saat di-scroll */
+    padding: 15px 10%;
+    position: fixed; /* Navigasi tetap di atas saat scroll */
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Efek bayangan tipis */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Bayangan halus di bawah nav */
 }
 
 nav {
     display: flex;
-    justify-content: space-between; /* Logo di kiri, Menu di kanan */
+    justify-content: space-between; /* Logo di kiri, menu di kanan */
     align-items: center;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: bold;
-    color: #ff4d6d; /* Warna pink utama */
+    color: #ff4d94; /* Warna pink utama */
 }
 
 .logo span {
@@ -42,108 +41,121 @@ nav {
 
 nav ul {
     display: flex;
-    list-style: none; /* Menghilangkan titik bullet pada list */
+    list-style: none; /* Menghilangkan titik bullet */
 }
 
 nav ul li {
-    margin-left: 25px;
+    margin-left: 20px;
 }
 
 nav ul li a {
-    text-decoration: none; /* Menghilangkan garis bawah link */
-    color: #333;
+    text-decoration: none;
+    color: #555;
     font-weight: 500;
-    transition: 0.3s; /* Efek halus saat kursor menyentuh link */
+    transition: 0.3s; /* Efek transisi saat hover */
 }
 
 nav ul li a:hover {
-    color: #ff4d6d; /* Berubah warna jadi pink saat di-hover */
+    color: #ff4d94; /* Berubah pink saat kursor di atasnya */
 }
 
-/* --- HERO SECTION --- */
+/* --- BAGIAN HERO (HOME) --- */
 .hero {
-    height: 100vh; /* Memenuhi satu layar penuh */
+    padding: 150px 10% 80px; /* Jarak atas disesuaikan karena nav fixed */
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 0 10%;
-    background: linear-gradient(135deg, #fff5f7 50%, #ffe3e8 50%); /* Background dua warna */
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+#home-content {
+    max-width: 600px;
 }
 
 #home-content h1 {
-    font-size: 4rem;
-    color: #ff4d6d;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    color: #ff4d94;
+    margin: 10px 0;
 }
 
 .btn-hero {
     display: inline-block;
     padding: 12px 30px;
-    background-color: #ff4d6d;
+    background-color: #ff4d94;
     color: white;
     text-decoration: none;
-    border-radius: 30px; /* Membuat tombol lonjong/rounded */
+    border-radius: 25px;
     margin-top: 20px;
     transition: 0.3s;
 }
 
 .btn-hero:hover {
-    background-color: #ff758f;
-    transform: translateY(-3px); /* Efek melompat sedikit saat di-hover */
+    background-color: #e60073; /* Warna pink lebih gelap saat di-hover */
+    transform: translateY(-3px); /* Tombol sedikit naik ke atas */
 }
 
 .hero-logo img {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%; /* Membuat foto menjadi bulat sempurna */
-    border: 8px solid white;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    object-fit: cover; /* Menjaga proporsi gambar dalam lingkaran */
+    width: 350px;
+    height: 350px;
+    border-radius: 50%; /* Membuat foto jadi lingkaran */
+    border: 8px solid #ffdeeb; /* Bingkai pink sangat muda */
+    object-fit: cover;
 }
 
-/* --- CONTAINER UMUM --- */
+/* --- BAGIAN CONTAINER UMUM --- */
 .container {
-    padding: 80px 10%; /* Ruang antar section */
+    padding: 80px 10%;
     text-align: center;
 }
 
 h2 {
     font-size: 2.5rem;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    color: #333;
     position: relative;
-    display: inline-block;
 }
 
-h2::after { /* Garis dekorasi di bawah judul */
+h2::after { /* Garis kecil di bawah judul */
     content: '';
-    width: 50%;
+    width: 60px;
     height: 4px;
-    background: #ff4d6d;
+    background: #ff4d94;
     position: absolute;
     bottom: -10px;
-    left: 25%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* --- PROYEK (GRID SYSTEM) --- */
+/* --- BAGIAN ABOUT --- */
+.about-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    line-height: 1.8;
+}
+
+/* --- BAGIAN PROYEK (GRID) --- */
+.bg-light { background-color: #fff0f5; }
+
 .proyek-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Membuat kartu sejajar & otomatis ke bawah jika layar sempit */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsif: minimal 300px per kartu */
     gap: 25px; /* Jarak antar kartu */
-    margin-top: 40px;
 }
 
 .proyek-card {
     background: white;
-    border-radius: 15px;
-    overflow: hidden; /* Memastikan gambar tidak keluar dari sudut rounded */
     text-decoration: none;
-    color: #333;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    color: inherit;
+    border-radius: 15px;
+    overflow: hidden; /* Agar gambar tidak keluar dari sudut melengkung */
     transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .proyek-card:hover {
-    transform: scale(1.05); /* Sedikit membesar saat disentuh */
+    transform: scale(1.03); /* Membesar sedikit saat di-hover */
 }
 
 .proyek-card img {
@@ -156,32 +168,43 @@ h2::after { /* Garis dekorasi di bawah judul */
     padding: 20px;
 }
 
-/* --- MEDIA SOSIAL --- */
+.proyek-info h3 {
+    color: #ff4d94;
+    margin-bottom: 5px;
+}
+
+/* --- BAGIAN MEDSOS --- */
 .medsos-list {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .medsos-item {
-    text-decoration: none;
-    color: #ff4d6d;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
 }
 
 .medsos-item img {
-    width: 40px;
+    width: 50px;
+    height: 50px;
     margin-bottom: 10px;
 }
 
-/* --- FOOTER --- */
+.medsos-item:hover {
+    color: #ff4d94;
+    transform: translateY(-5px);
+}
+
+/* --- BAGIAN FOOTER --- */
 footer {
-    background-color: #333;
+    background: #333;
     color: white;
-    text-align: center;
     padding: 20px;
-    margin-top: 50px;
+    text-align: center;
 }
