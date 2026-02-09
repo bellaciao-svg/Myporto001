@@ -1,0 +1,187 @@
+/* Mengatur font global dan reset margin agar tampilan bersih */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Memastikan padding tidak merusak ukuran elemen */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth; /* Efek scrolling halus saat klik menu navigasi */
+}
+
+body {
+    background-color: #fff5f7; /* Warna latar belakang pink sangat muda */
+    color: #333; /* Warna teks utama abu-abu gelap agar nyaman dibaca */
+    line-height: 1.6;
+}
+
+/* --- NAVIGASI --- */
+header {
+    background-color: #ffffff;
+    padding: 1rem 10%; /* Memberi ruang di kiri-kanan */
+    position: fixed; /* Navigasi tetap di atas saat di-scroll */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Efek bayangan tipis */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Logo di kiri, Menu di kanan */
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff4d6d; /* Warna pink utama */
+}
+
+.logo span {
+    color: #333;
+}
+
+nav ul {
+    display: flex;
+    list-style: none; /* Menghilangkan titik bullet pada list */
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none; /* Menghilangkan garis bawah link */
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s; /* Efek halus saat kursor menyentuh link */
+}
+
+nav ul li a:hover {
+    color: #ff4d6d; /* Berubah warna jadi pink saat di-hover */
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh; /* Memenuhi satu layar penuh */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 10%;
+    background: linear-gradient(135deg, #fff5f7 50%, #ffe3e8 50%); /* Background dua warna */
+}
+
+#home-content h1 {
+    font-size: 4rem;
+    color: #ff4d6d;
+    margin-bottom: 10px;
+}
+
+.btn-hero {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ff4d6d;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px; /* Membuat tombol lonjong/rounded */
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-hero:hover {
+    background-color: #ff758f;
+    transform: translateY(-3px); /* Efek melompat sedikit saat di-hover */
+}
+
+.hero-logo img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /* Membuat foto menjadi bulat sempurna */
+    border: 8px solid white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    object-fit: cover; /* Menjaga proporsi gambar dalam lingkaran */
+}
+
+/* --- CONTAINER UMUM --- */
+.container {
+    padding: 80px 10%; /* Ruang antar section */
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after { /* Garis dekorasi di bawah judul */
+    content: '';
+    width: 50%;
+    height: 4px;
+    background: #ff4d6d;
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+}
+
+/* --- PROYEK (GRID SYSTEM) --- */
+.proyek-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Membuat kartu sejajar & otomatis ke bawah jika layar sempit */
+    gap: 25px; /* Jarak antar kartu */
+    margin-top: 40px;
+}
+
+.proyek-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden; /* Memastikan gambar tidak keluar dari sudut rounded */
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.proyek-card:hover {
+    transform: scale(1.05); /* Sedikit membesar saat disentuh */
+}
+
+.proyek-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.proyek-info {
+    padding: 20px;
+}
+
+/* --- MEDIA SOSIAL --- */
+.medsos-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.medsos-item {
+    text-decoration: none;
+    color: #ff4d6d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.medsos-item img {
+    width: 40px;
+    margin-bottom: 10px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
